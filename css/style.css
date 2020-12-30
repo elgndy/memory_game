@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-image: url(.././bac.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  margin-top: 5%;
+}
+
+.info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info button {
+  padding: 20px;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  background: rgb(204, 41, 41);
+  width: 250px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.info button:hover {
+  background: #fafafa;
+  transition: all 0.52s;
+  color: rgb(204, 41, 41);
+}
+
+.game_container_blocks {
+  width: 70%;
+  padding: 15px;
+  margin: 20px auto;
+  background: 0;
+}
+
+.person_info {
+  display: flex;
+  padding: 15px;
+  background: #fec17f;
+  box-shadow: 2px 2px 5px rgb(65, 62, 62), -2px -2px 3px rgb(145, 144, 144);
+  margin-bottom: 2%;
+  color: #444;
+}
+.person_info span {
+  display: block;
+}
+.person_info span:first-of-type {
+  width: 50%;
+  text-align: left;
+}
+.person_info span:last-of-type {
+  width: 50%;
+  text-align: right;
+}
+
+.pair_game {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.game_blocks {
+  text-align: center;
+  flex: 1 0 100px;
+  height: 100px;
+  transition: all 0.5s;
+  margin: 10px 10px 10px;
+  transform-style: preserve-3d;
+}
+.front {
+  background: #fec17f;
+  line-height: 100px;
+  color: #444;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.front::before {
+  content: "?";
+}
+.game_blocks .back {
+  background: #607b60;
+  transform: rotateY(180deg);
+  line-height: 100px;
+  color: #fff;
+  font-size: 50px;
+}
+
+.game_blocks.is_fliped,
+.game_blocks.has_fliped {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  cursor: pointer;
+  box-shadow: 4px 5px 5px #58432c, -2px -2px 3px #7e5f3e;
+  border-radius: 5px;
+}
+
+.no_clicking {
+  pointer-events: none;
+}
